@@ -11,7 +11,7 @@ import streamlit as st
 # =========================
 model = joblib.load("traffic_model.pkl")
 
-st.title("🚗 Prédiction du trafic (Smart City)")
+st.title("Prédiction du trafic (Smart City)")
 st.write("Application de prédiction du trafic routier en temps réel")
 
 # =========================
@@ -65,16 +65,16 @@ input_data = np.array([[
 # =========================
 # PREDICTION
 # =========================
-if st.button("🚦 Prédire le trafic"):
+if st.button("Prédire le trafic"):
 
     prediction = model.predict(input_data)[0]
 
-    st.success(f"🚗 Trafic estimé: {int(prediction)} véhicules")
+    st.success(f" Trafic estimé: {int(prediction)} véhicules")
 
     # =========================
     # GRAPH 1: TRAFFIC LEVEL
     # =========================
-    st.subheader("📊 Niveau de trafic")
+    st.subheader("Niveau de trafic")
 
     categories = ["Faible", "Moyen", "Élevé"]
     level = [0, 0, 0]
@@ -96,7 +96,7 @@ if st.button("🚦 Prédire le trafic"):
     # =========================
     # GRAPH 2: HOURLY IMPACT
     # =========================
-    st.subheader("📈 Impact de l'heure sur le trafic")
+    st.subheader("Impact de l'heure sur le trafic")
 
     hours = list(range(24))
     predictions_hour = []
